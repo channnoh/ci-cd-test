@@ -69,10 +69,12 @@ jobs:
 
         script: |
           sudo docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
+          echo 로그인 완료
           # sudo docker kill ${{ secrets.PROJECT_NAME }}
           # sudo docker rm -f ${{ secrets.PROJECT_NAME }}
           # sudo docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.PROJECT_NAME }}
           sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.PROJECT_NAME }}
+          echo 이미지 pull 완료
 
           sudo docker run -p ${{ secrets.PORT }}:${{ secrets.PORT }} \
           --name ${{ secrets.PROJECT_NAME }} \
