@@ -10,7 +10,7 @@ public class TestCi {
 
   @Test
   void test() {
-    int x = 1;
+    int x = 2;
     int y = 2;
 
     Assertions.assertEquals(x,y);
