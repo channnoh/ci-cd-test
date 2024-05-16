@@ -1,0 +1,16 @@
+services:
+  redis:
+    container_name: redis-container
+    image: redis
+    ports:
+      - "6379:6379"
+
+  goodsapp:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - redis
+    ports:
+      - "8080:8080"
