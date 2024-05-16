@@ -99,8 +99,8 @@ jobs:
           # 기존 컨테이너 종료 및 제거
           sudo docker-compose down
           
-          # # docker-compose.yml 파일을 생성
-          # echo "${{ secrets.DOCKER_COMPOSE_FILE }}" > docker-compose.yml
+          # docker-compose.yml 파일을 생성
+          echo "${{ secrets.DOCKER_COMPOSE_FILE }}" > docker-compose.yml
 
           # docker-compose를 사용하여 컨테이너 실행
           sudo docker-compose up -d --build
