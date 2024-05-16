@@ -13,7 +13,7 @@ jobs:
     permissions:
       contents: read
  
-    steps:
+    steps: 
     - uses: actions/checkout@v4
 
     # JDK 17 설치
