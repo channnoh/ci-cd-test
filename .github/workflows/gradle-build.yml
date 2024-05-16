@@ -91,8 +91,8 @@ jobs:
           sudo docker rm -f ${{ secrets.PROJECT_NAME }}
           sudo docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.PROJECT_NAME }}
           sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.PROJECT_NAME }}
-
-          sudo docker run -p ${{ secrets.APP_PORT }}:${{ secrets.APP_PORT }} --name ${{ secrets.PROJECT_NAME }} -d ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.PROJECT_NAME }}
+          sudo docker-compose up -d
+          # sudo docker run -p ${{ secrets.APP_PORT }}:${{ secrets.APP_PORT }} --name ${{ secrets.PROJECT_NAME }} -d ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.PROJECT_NAME }}
 
     # Remove Github Actions IP From Security Group
     - name: Remove Github Actions IP From Security Group
